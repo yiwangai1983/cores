@@ -13,8 +13,19 @@
        http://www.springframework.org/schema/aop/spring-aop.xsd
        http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
-    <!-- prop文件加载 -->
+    <bean id="SpringContext" class="com.cores.corePlatform.base.api.content.SpringContext"></bean>
     <!-- 批处理 -->
+    <!-- prop文件加载 -->
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+        <property name="locations">
+            <list>
+                <value>
+                    /WEB-INF/properties/config.properties
+                </value>
+            </list>
+        </property>
+    </bean>
     <!-- 加载Properties -->
     <bean id="coresProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
         <property name="singleton" value="true"/>
