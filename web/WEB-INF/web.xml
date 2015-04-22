@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <!-- spring context-param and listener -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/applicationContext.xml</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <!-- spring context-param and listener -->
+
+    <!-- spring请求拦截过滤 -->
+    <servlet>
+        <servlet-name>web</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>web</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+    <!-- spring请求拦截过滤 -->
+    
+    <servlet>
+    <servlet-name>cacheServlet</servlet-name>
+    <servlet-class>com.cores.corePlatform.servlet.CacheServlet</servlet-class>
+    <load-on-startup>3</load-on-startup>
+</servlet>
+    <servlet-mapping>
+        <servlet-name>cacheServlet</servlet-name>
+        <url-pattern>/CacheServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+    <!-- log4j 配置 -->
+    <context-param>
+        <param-name>log4jConfigLocation</param-name>
+        <param-value>/WEB-INF/log4j.properties</param-value>
+    </context-param>
+    <context-param>
+        <param-name>log4jRefreshInterval</param-name>
+        <param-value>6000</param-value>
+    </context-param>
+    <listener>
+        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+    </listener>
+    <!-- log4j 配置 -->
+
+    <!-- web root key -->
+    <context-param>
+        <param-name>webAppRootKey</param-name>
+        <param-value>cores.root</param-value>
+    </context-param>
+    <!-- web root key -->
+
+    <!-- welcome file -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <!-- welcome file -->
+
+</web-app>
