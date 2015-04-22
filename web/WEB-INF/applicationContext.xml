@@ -13,4 +13,14 @@
        http://www.springframework.org/schema/aop/spring-aop.xsd
        http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
+    <!-- prop文件加载 -->
+    <!-- 批处理 -->
+    <!-- 加载Properties -->
+    <bean id="coresProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="singleton" value="true"/>
+        <property name="properties">
+            <props>
+            </props>
+        </property>
+    </bean>
 </beans>
