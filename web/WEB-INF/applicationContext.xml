@@ -18,7 +18,7 @@
 
 
     <!-- spring 自动扫描 -->
-    <!--<context:component-scan base-package="com.cores.corePlatform"/>-->
+    <context:component-scan base-package="com.cores.corePlatform"/>
     <bean id="SpringContext" class="com.cores.corePlatform.base.api.content.SpringContext"></bean>
     <!-- 批处理 -->
     <!-- prop文件加载 -->
