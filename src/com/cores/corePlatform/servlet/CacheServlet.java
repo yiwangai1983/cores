@@ -17,16 +17,15 @@ public class CacheServlet extends HttpServlet{
     private static Logger logger = Logger.getLogger(CacheServlet.class.getName());
 
     /**
-     * ˢ�»���
+     * 刷新缓存
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         logger.info("刷新缓存开始...start");
-
         logger.info("刷新缓存开始...end");
     }
 
     /**
-     * ˢ�»���
+     * 刷新缓存
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         this.doGet(request, response);
