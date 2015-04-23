@@ -37,6 +37,7 @@
         <property name="singleton" value="true"/>
         <property name="properties">
             <props>
+                <prop key="com.superc.cores.test">${com.superc.cores.test}</prop>
             </props>
         </property>
     </bean>
