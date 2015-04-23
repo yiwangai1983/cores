@@ -17,16 +17,16 @@ public class CacheServlet extends HttpServlet{
     private static Logger logger = Logger.getLogger(CacheServlet.class.getName());
 
     /**
-     * Ë¢ÐÂ»º´æ
+     * Ë¢ï¿½Â»ï¿½ï¿½ï¿½
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
-        logger.info("Ë¢ÐÂ»º´æ...start");
+        logger.info("åˆ·æ–°ç¼“å­˜å¼€å§‹...start");
 
-        logger.info("Ë¢ÐÂ»º´æ...end");
+        logger.info("åˆ·æ–°ç¼“å­˜å¼€å§‹...end");
     }
 
     /**
-     * Ë¢ÐÂ»º´æ
+     * Ë¢ï¿½Â»ï¿½ï¿½ï¿½
      */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException {
         this.doGet(request, response);
