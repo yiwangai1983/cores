@@ -32,24 +32,48 @@
     <servlet>
         <servlet-name>web</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <load-on-startup>2</load-on-startup>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>web</servlet-name>
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>web</servlet-name>
+        <url-pattern>*.action</url-pattern>
+    </servlet-mapping>
     <!-- spring请求拦截过滤 -->
-    
+
+    <!-- 加载批处理 -->
     <servlet>
-    <servlet-name>cacheServlet</servlet-name>
-    <servlet-class>com.cores.corePlatform.servlet.CacheServlet</servlet-class>
-    <load-on-startup>3</load-on-startup>
-</servlet>
+        <servlet-name>batchInitServlet</servlet-name>
+        <servlet-class>com.cores.corePlatform.servlet.quartz.BatchInitServlet</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>batchInitServlet</servlet-name>
+        <url-pattern>/batchInitServlet</url-pattern>
+    </servlet-mapping>
+    <!-- 加载批处理 -->
+
+    <!-- 刷新缓存 -->
+    <servlet>
+        <servlet-name>cacheServlet</servlet-name>
+        <servlet-class>com.cores.corePlatform.servlet.CacheServlet</servlet-class>
+        <load-on-startup>3</load-on-startup>
+    </servlet>
     <servlet-mapping>
         <servlet-name>cacheServlet</servlet-name>
         <url-pattern>/CacheServlet</url-pattern>
     </servlet-mapping>
-    
+    <!-- 刷新缓存 -->
+
+    <!-- 设置session超时 -->
+    <session-config>
+        <session-timeout>10</session-timeout>
+    </session-config>
+    <!-- 设置session超时 -->
+
     <!-- web root key -->
     <context-param>
         <param-name>webAppRootKey</param-name>
