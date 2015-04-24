@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans.xsd">
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- spring 自动扫描 -->
+    <context:component-scan base-package="com.cores.corePlatform"/>
 
     <bean id="SpringContext" class="com.cores.corePlatform.base.api.content.SpringContext"></bean>
     <!-- 批处理 spring4.1.6中在content-support包中 特么的. 让我好找-->
