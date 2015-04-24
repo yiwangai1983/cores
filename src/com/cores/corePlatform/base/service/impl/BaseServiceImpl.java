@@ -1,4 +1,4 @@
-package com.cores.corePlatform.base.service;
+package com.cores.corePlatform.base.service.impl;
 
 import com.cores.corePlatform.base.PlatformBaseClass;
 

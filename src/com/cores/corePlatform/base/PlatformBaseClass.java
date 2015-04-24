@@ -13,11 +13,11 @@ public abstract class PlatformBaseClass {
 
     protected final Logger logger = Logger.getLogger(getClass());
     @Resource
-    protected Properties ebizProperties;
+    protected Properties coresProperties;
 
     public PlatformBaseClass() {
-        if (null == ebizProperties) {
-            ebizProperties = (Properties) SpringContext.getBean("ebizProperties");
+        if (null == coresProperties) {
+            coresProperties = (Properties) SpringContext.getBean("coresProperties");
         }
 
 
