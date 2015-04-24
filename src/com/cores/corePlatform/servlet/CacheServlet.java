@@ -20,8 +20,9 @@ public class CacheServlet extends HttpServlet{
      * 刷新缓存
      */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException {
-        logger.info("刷新缓存开始...start");
-        logger.info("刷新缓存开始...end");
+        logger.info("刷新缓存...start");
+        System.out.println("xxxxxxxx");
+        logger.info("刷新缓存...end");
     }
 
     /**
